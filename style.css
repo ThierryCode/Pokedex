@@ -1,0 +1,119 @@
+*,::after,::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #333;
+    color: #333;
+}
+h1{
+    text-align: center;
+    padding: 25px 0;
+    color: #f1f1f1;
+}
+.recherchePoke{
+    max-width: 700px;
+    width: 70%;
+    min-width: 450px;
+    margin: 30px auto;
+    position: relative;
+    display: flex;
+}
+.inp-group{
+    width: 100%;
+}
+.recherchePoke input{
+    width: 100%;
+    padding: 15px;
+    border: bone;
+    outline: none;
+    border-radius: 3px;
+    font-size: 21px;
+}
+.recherchePoke label{
+    position: absolute;
+    color:#333;
+    top:50%;
+    transform:translateY(-50%);
+    padding-left:8px;
+    transition: all 0.2s ease-in;
+}
+/*Animation input*/
+.recherchePoke:focus-within label, .recherchePoke.activeInput label{
+    top:-15px;
+    /* padding-left: 5px; */
+    color: #f1f1f1;
+    /* background-color: tomato; */
+}
+/*Liste des cartes*/
+.container{
+    width: 70%;
+    max-width: 1100px;
+    height: auto;
+    margin: 0 auto;
+}
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.listPoke li{
+    width: 250px;
+    height: auto;
+    padding: 15px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.listPoke h5{
+    font-size: 19px;
+}
+.listPoke p{
+    font-size: 18px;
+}
+/*Anim loader*/
+.loader{
+    position: absolute;
+    top:250px;
+    left:50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.point{
+    margin: 0px 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    animation: monte 0.3s alternate infinite;
+}
+.point:nth-child(1){
+    animation-delay: 0.1s;
+}
+.point:nth-child(2){
+    animation-delay: 0.2s;
+}
+.point:nth-child(3){
+    animation-delay: 0.3s;
+}
+@keyframes monte {
+        100%{
+            transform: translateY(-30px);
+        }
+}
+/* Appliquer un effet de zoom et une ombre lorsqu'un élément <li> est survolé */
+li:hover {
+    transform: scale(1.1); /* Zoom de 10% lors du survol */
+    transition: 0.2s; /* Ajouter une transition fluide de 0.2 seconde */
+    box-shadow: 0 0 10px rgba(175, 199, 136, 0.5); /* Ombre dorée et floue */
+}
